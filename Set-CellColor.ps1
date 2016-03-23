@@ -121,6 +121,7 @@
     }
     
     Process {
+        $InputObject = $InputObject -split "`r`n"
         ForEach ($Line in $InputObject)
         {   If ($Line.IndexOf("<tr><th") -ge 0)
             {   Write-Verbose "$(Get-Date): Processing headers..."
