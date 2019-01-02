@@ -157,7 +157,7 @@
                     }
                     Else
                     {   Write-Verbose "$(Get-Date): Criteria met!  Changing cell to $Color..."
-                        $Line = $Line.Replace($Search.Matches[$Index].Value,"<td style=""background-color:$Color"">$Value</td>")
+                        $Line = $Line.remove($Search.Matches[$Index].Index,$Search.Matches[$Index].Length).insert($Search.Matches[$Index].Index, "<td style=""background-color:$Color"">$Value</td>")
                     }
                 }
             }
